@@ -10,7 +10,7 @@ import SwiftUI
 struct BackgroundModifier: ViewModifier {
     func body(content: Content) -> some View {
         ZStack {
-            Constants.mainColor
+            Constants.meliYellow
                 .edgesIgnoringSafeArea(.all)
             content
         }
@@ -65,6 +65,22 @@ extension View {
             .cornerRadius(15)
             .shadow(radius: 3)
     }
+    
+    func containerDetailStyle(minWidth: Double = 140, maxWidth: Double = 140) -> some View {
+        self.frame(minWidth: minWidth, maxWidth: maxWidth)
+            .padding()
+            .background(Color.white)
+            .cornerRadius(15)
+            .shadow(radius: 3)
+    }
+
+    
+    func fadeInUp(isVisible: Bool, delay: Double = 0) -> some View {
+       self
+           .opacity(isVisible ? 1 : 0)
+           .offset(y: isVisible ? 0 : 20)
+           .animation(.easeOut(duration: 0.5).delay(delay), value: isVisible)
+   }
 }
 
 extension Double {

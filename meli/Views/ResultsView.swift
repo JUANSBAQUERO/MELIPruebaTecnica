@@ -36,6 +36,7 @@ struct ResultsView: View {
             }
             .padding()
         }
+        .accessibilityIdentifier("resultsView")
     }
 }
 

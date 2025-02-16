@@ -18,13 +18,19 @@ class SearchResultTests: XCTestCase {
                     "id": "123",
                     "title": "iPhone 15",
                     "price": 999.99,
-                    "thumbnail": "https://example.com/image.jpg"
+                    "category_id": "MLA12345",
+                    "thumbnail": "https://example.com/2.jpg",
+                    "permalink": "https://example.com/product2",
+                    "attributes": []
                 },
                 {
                     "id": "456",
                     "title": "MacBook Pro",
                     "price": 1999.99,
-                    "thumbnail": "https://example.com/macbook.jpg"
+                    "category_id": "MLA12345",
+                    "thumbnail": "https://example.com/2.jpg",
+                    "permalink": "https://example.com/product2",
+                    "attributes": []
                 }
             ]
         }
@@ -40,8 +46,24 @@ class SearchResultTests: XCTestCase {
 
     func testSearchResultEncoding() throws {
         let products = [
-            Product(id: "123", title: "iPhone 15", price: 999.99, thumbnail: "https://example.com/image.jpg"),
-            Product(id: "456", title: "MacBook Pro", price: 1999.99, thumbnail: "https://example.com/macbook.jpg")
+            Product(
+                id: "123",
+                title: "iPhone 15",
+                price: 999.99,
+                category_id: "MLA12345",
+                thumbnail: "https://example.com/1.jpg",
+                permalink: "https://example.com/product1",
+                attributes: []
+            ),
+            Product(
+                id: "456",
+                title: "MacBook Pro",
+                price: 1999.99,
+                category_id: "MLA12345",
+                thumbnail: "https://example.com/2.jpg",
+                permalink: "https://example.com/product2",
+                attributes: []
+            )
         ]
         
         let searchResult = SearchResult(results: products)
@@ -55,11 +77,15 @@ class SearchResultTests: XCTestCase {
         XCTAssertEqual(decodedSearchResult.results[0].id, "123")
         XCTAssertEqual(decodedSearchResult.results[0].title, "iPhone 15")
         XCTAssertEqual(decodedSearchResult.results[0].price, 999.99)
-        XCTAssertEqual(decodedSearchResult.results[0].thumbnail, "https://example.com/image.jpg")
+        XCTAssertEqual(decodedSearchResult.results[0].category_id, "MLA12345")
+        XCTAssertEqual(decodedSearchResult.results[0].thumbnail, "https://example.com/1.jpg")
+        XCTAssertEqual(decodedSearchResult.results[0].permalink, "https://example.com/product1")
         XCTAssertEqual(decodedSearchResult.results[1].id, "456")
         XCTAssertEqual(decodedSearchResult.results[1].title, "MacBook Pro")
         XCTAssertEqual(decodedSearchResult.results[1].price, 1999.99)
-        XCTAssertEqual(decodedSearchResult.results[1].thumbnail, "https://example.com/macbook.jpg")
+        XCTAssertEqual(decodedSearchResult.results[1].category_id, "MLA12345")
+        XCTAssertEqual(decodedSearchResult.results[1].thumbnail, "https://example.com/2.jpg")
+        XCTAssertEqual(decodedSearchResult.results[1].permalink, "https://example.com/product2")
     }
 
 }

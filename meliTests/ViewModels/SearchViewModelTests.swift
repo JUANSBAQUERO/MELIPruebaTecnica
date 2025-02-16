@@ -27,9 +27,26 @@ class SearchViewModelTests: XCTestCase {
 
     func testSearchProducts_Success() {
         let mockProducts = [
-            Product(id: "1", title: "Producto 1", price: 100.0, thumbnail: "https://example.com/1.jpg"),
-            Product(id: "2", title: "Producto 2", price: 200.0, thumbnail: "https://example.com/2.jpg")
+            Product(
+                id: "1",
+                title: "Producto 1",
+                price: 100.0,
+                category_id: "MLA12345",
+                thumbnail: "https://example.com/1.jpg",
+                permalink: "https://example.com/product1",
+                attributes: []
+            ),
+            Product(
+                id: "2",
+                title: "Producto 2",
+                price: 200.0,
+                category_id: "MLA67890",
+                thumbnail: "https://example.com/2.jpg",
+                permalink: "https://example.com/product2",
+                attributes: []
+            )
         ]
+
         let mockResult = SearchResult(results: mockProducts)
         
         mockService.mockResult = .success(mockResult)

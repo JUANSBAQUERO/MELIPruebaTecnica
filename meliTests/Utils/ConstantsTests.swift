@@ -13,7 +13,6 @@ class ConstantsTests: XCTestCase {
 
     func testColorsExist() {
         let colors = [
-            Constants.mainColor,
             Constants.meliYellow,
             Constants.meliBlue,
             Constants.meliGray

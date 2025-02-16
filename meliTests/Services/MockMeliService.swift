@@ -16,4 +16,10 @@ class MockMeliService: MeliServiceProtocol {
             completion(result)
         }
     }
+    
+    func searchProductsByCategory(categoryId: String, completion: @escaping (Result<SearchResult, Error>) -> Void) {
+        if let result = mockResult {
+            completion(result)
+        }
+    }
 }

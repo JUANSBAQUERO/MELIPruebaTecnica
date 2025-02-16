@@ -9,6 +9,7 @@ import Foundation
 
 protocol MeliServiceProtocol {
     func searchProducts(query: String, completion: @escaping (Result<SearchResult, Error>) -> Void)
+    func searchProductsByCategory(categoryId: String, completion: @escaping (Result<SearchResult, Error>) -> Void)
 }
 
 class MeliService: MeliServiceProtocol {
@@ -21,6 +22,15 @@ class MeliService: MeliServiceProtocol {
     
     func searchProducts(query: String, completion: @escaping (Result<SearchResult, Error>) -> Void) {
         guard let url = URL(string: "\(url)search?q=\(query)") else {
+            completion(.failure(NSError(domain: "InvalidURL", code: -1, userInfo: nil)))
+            return
+        }
+
+        APIClient.fetch(url: url, completion: completion)
+    }
+    
+    func searchProductsByCategory(categoryId: String, completion: @escaping (Result<SearchResult, Error>) -> Void) {
+        guard let url = URL(string: "\(url)search?category=\(categoryId)") else {
             completion(.failure(NSError(domain: "InvalidURL", code: -1, userInfo: nil)))
             return
         }

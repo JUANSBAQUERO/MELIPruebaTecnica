@@ -19,6 +19,7 @@ struct ProductCardView: View {
                 
                 Text(product.title)
                     .subtitleStyle()
+                    .accessibilityIdentifier("product_\(product.id)")
                 
                 Spacer()
                 
