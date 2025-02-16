@@ -1,7 +1,15 @@
+//
+//  LoadingView.swift
+//  meli
+//
+//  Created by Juan  on 15/02/25.
+//
+
+
 import SwiftUI
 
 struct LoadingView: View {
-    var text: String = "Cargando..." // Texto opcional
+    var text: String = "Cargando..."
 
     var body: some View {
         VStack {
@@ -15,6 +23,6 @@ struct LoadingView: View {
                 .padding(.top, 10)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.white.opacity(0.8)) // Fondo semitransparente
+        .background(Color.white.opacity(0.8))
     }
 }

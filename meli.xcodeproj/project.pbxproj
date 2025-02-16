@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		04FC253F2D619C3B00C18215 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04FC253E2D619C3B00C18215 /* XCTest.framework */; };
+		04FC25402D619C3B00C18215 /* XCTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04FC253E2D619C3B00C18215 /* XCTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		046467392D5F9C5E00FB0789 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -23,15 +28,43 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		04FC25412D619C3B00C18215 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				04FC25402D619C3B00C18215 /* XCTest.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		046467272D5F9C5C00FB0789 /* meli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meli.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		046467382D5F9C5E00FB0789 /* meliTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meliTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		046467422D5F9C5E00FB0789 /* meliUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meliUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04FC253E2D619C3B00C18215 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		04FC25022D61211900C18215 /* Exceptions for "meli" folder in "meli" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 046467262D5F9C5C00FB0789 /* meli */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		046467292D5F9C5C00FB0789 /* meli */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				04FC25022D61211900C18215 /* Exceptions for "meli" folder in "meli" target */,
+			);
 			path = meli;
 			sourceTree = "<group>";
 		};
@@ -43,6 +76,11 @@
 		046467452D5F9C5E00FB0789 /* meliUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = meliUITests;
+			sourceTree = "<group>";
+		};
+		04FC25072D61237300C18215 /* Config */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -59,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04FC253F2D619C3B00C18215 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,9 +114,11 @@
 		0464671E2D5F9C5C00FB0789 = {
 			isa = PBXGroup;
 			children = (
+				04FC25072D61237300C18215 /* Config */,
 				046467292D5F9C5C00FB0789 /* meli */,
 				0464673B2D5F9C5E00FB0789 /* meliTests */,
 				046467452D5F9C5E00FB0789 /* meliUITests */,
+				04FC253D2D619C3A00C18215 /* Frameworks */,
 				046467282D5F9C5C00FB0789 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +131,14 @@
 				046467422D5F9C5E00FB0789 /* meliUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		04FC253D2D619C3A00C18215 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04FC253E2D619C3B00C18215 /* XCTest.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,6 +158,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				046467292D5F9C5C00FB0789 /* meli */,
+				04FC25072D61237300C18215 /* Config */,
 			);
 			name = meli;
 			packageProductDependencies = (
@@ -124,6 +174,7 @@
 				046467342D5F9C5E00FB0789 /* Sources */,
 				046467352D5F9C5E00FB0789 /* Frameworks */,
 				046467362D5F9C5E00FB0789 /* Resources */,
+				04FC25412D619C3B00C18215 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -271,9 +322,12 @@
 /* Begin XCBuildConfiguration section */
 		0464674A2D5F9C5E00FB0789 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 04FC25072D61237300C18215 /* Config */;
+			baseConfigurationReferenceRelativePath = Secrets.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BASE_URL = "$(BASE_URL)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -332,9 +386,12 @@
 		};
 		0464674B2D5F9C5E00FB0789 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 04FC25072D61237300C18215 /* Config */;
+			baseConfigurationReferenceRelativePath = Secrets.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BASE_URL = "$(BASE_URL)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -379,6 +436,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
@@ -388,12 +446,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "$(BASE_URL)";
 				CODE_SIGN_ENTITLEMENTS = meli/meli.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"meli/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = meli/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MeliExplorer;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -425,12 +486,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "$(BASE_URL)";
 				CODE_SIGN_ENTITLEMENTS = meli/meli.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"meli/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = meli/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MeliExplorer;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

@@ -5,12 +5,16 @@
 //  Created by Juan  on 14/02/25.
 //
 
-import Testing
+import XCTest
+@testable import meli
 
-struct meliTests {
+class meliTests: XCTestCase {
 
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+    func testSearchViewInitialization() {
+        let searchView = SearchView()
+
+        XCTAssertNotNil(searchView)
     }
-
 }
+
+

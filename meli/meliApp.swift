@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct meliApp: App {
+struct MeliAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SearchView()
         }
     }
 }
